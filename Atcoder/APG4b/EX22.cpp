@@ -4,31 +4,16 @@ using namespace std;
 int main() {
 	int N;
 	cin >> N;
-    vector<int> A(N);
-    for (int i = 0; i < N; i++) {
-        cin >> A.at(i);
+    vector<pair<int,int>>p(N);
+	for(int i = 0; i < N; i++) {
+        int a, b;
+        cin >> a >> b;
+        p.at(i) = make_pair(b, a);
     }
-    map<int, int> cnt;
-
-    for(int a: A) {
-        if(cnt.count(a)) {
-            cnt.at(a)++;
-        }
-        else {
-            cnt[a] = 1;
-        }
+    sort(p.begin(), p.end());
+    for(int i = 0; i < N; i++) {
+        int a, b;
+        tie(b, a) = p.at(i);
+        cout << a << " " << b << endl;
     }
-
-    int mode_cnt = 0;
-    int mode = -1;
-    for(pair<int, int>p: cnt) {
-        int key = p.first;
-        int value = p.second;
-        if(mode_cnt < value) {
-            mode_cnt = value;
-            mode = key;
-        }
-    }
-    cout << mode << " " << mode_cnt << endl;
-
 }
