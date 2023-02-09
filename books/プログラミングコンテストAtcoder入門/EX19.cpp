@@ -14,7 +14,7 @@ int main() {
     long long sum_abs = 0;
     long long min_abs = 1LL << 60;
     for(int i = 0; i < n; i++) {
-        if(a.at(i) < 0) min_cnt++;
+        if(a.at(i) < 0) minus_cnt++;
         sum_abs += abs(a.at(i));
         min_abs = min(abs(a.at(i)), min_abs);
     }
