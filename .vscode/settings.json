@@ -5,6 +5,7 @@
         "ostream": "cpp",
         "iomanip": "cpp",
         "ios": "cpp",
-        "__locale": "cpp"
+        "__locale": "cpp",
+        "algorithm": "cpp"
     }
 }
